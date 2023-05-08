@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char *create_buffer(char *file);
+void close_file(int fdc);
+
 /**
  * create_buffer - allocates a buffer with a size of 1024 bytes.
  * @file: characters are stored in the buffer for the file.
  * Return: pointer referencing the recently allocated buffer..
  */
-
-char *create_buffer(char *file);
-void close_file(int fdc);
 
 char *create_buffer(char *file)
 {
