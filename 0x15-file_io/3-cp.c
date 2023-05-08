@@ -6,9 +6,9 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - allocates a buffer with a size of 1024 bytes.
- * @file: characters are stored in the buffer for the file.
- * Return: pointer referencing the recently allocated buffer.
+ * create_buffer - Allocates a buffer with a size of 1024 bytes.
+ * @file: Characters are stored in the buffer for the file.
+ * Return: pointer referencing the recently allocated buffer..
  */
 
 char *create_buffer(char *file)
@@ -20,7 +20,7 @@ char *create_buffer(char *file)
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", file);
+			"Error: Can't write to %s\n", file);
 		exit(99);
 	}
 
@@ -28,17 +28,17 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - closes the file handles.
- * @fd: the file descriptor that requires closure.
+ * close_file - Closes the file handles.
+ * @fdc: The file descriptor that requires closure.
  */
 
 void close_file(int fd)
 {
-	int a;
+	int c;
 
-	a = close(fd);
+	c = close(fd);
 
-	if (a == -1)
+	if (c == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -50,14 +50,10 @@ void close_file(int fd)
  * @argc: the count of arguments provided to the program.
  * @argv: a pointer array that holds references to the program's arguments.
  * Return : 0 indicates success.
- * note: if the argument count is incorrect, the program exits
- * with code 97
- * if the file specified by "file_from" does not exist or cannot be read,
- * the program exits with code 98
- * if the "file_to" cannot be created or written to, the program exits
- * with code 99
- * if either "file_to" or "file_from" cannot be closed,
- * the program exits with code 100
+ * note: if the argument count is incorrect, the program exits with code 97.
+ * if the file specified by "file_from" does not exist or cannot be read, the program exits with code 98.
+ * if the "file_to" cannot be created or written to, the program exits with code 99.
+ * if either "file_to" or "file_from" cannot be closed, the program exits with code 100.
  */
 
 int main(int argc, char *argv[])
@@ -79,7 +75,8 @@ int main(int argc, char *argv[])
 	do {
 		if (from == -1 || r == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
@@ -87,7 +84,8 @@ int main(int argc, char *argv[])
 		w = write(to, buffer, r);
 		if (to == -1 || w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
