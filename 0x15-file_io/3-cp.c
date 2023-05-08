@@ -29,7 +29,7 @@ char *create_buffer(char *file)
 
 /**
  * close_file - Closes the file handles.
- * @fdc: The file descriptor that requires closure.
+ * @fd: The file descriptor that requires closure.
  */
 
 void close_file(int fd)
