@@ -40,8 +40,7 @@ void close_file(int fd)
 
 	if (a == -1)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -80,8 +79,7 @@ int main(int argc, char *argv[])
 	do {
 		if (from == -1 || re == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
@@ -89,8 +87,7 @@ int main(int argc, char *argv[])
 		wr = write(to, buffer, re);
 		if (to == -1 || wr == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
