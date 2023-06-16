@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - Find the node located at position n in the linked list
+ * get_dnodeint_at_index - Find the node
+ * located at position n in the linked list
  * @index: Index of the node to retrieve in the linked list
  * @head: Pointer pointing to the beginning of the linked list
  * Return: if the node does not exist, return NULL
