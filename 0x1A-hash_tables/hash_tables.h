@@ -8,11 +8,11 @@
 
 /**
  * struct hash_node_s - hash table with node
- * @key: string key 
+ * @key: string key
  * @value: value of key
  * @next: next node of list
  */
- 
+
 typedef struct hash_node_s
 {
 	char *key;
@@ -25,7 +25,7 @@ typedef struct hash_node_s
  * @size: size of array
  * @array: array of size
  */
- 
+
 typedef struct hash_table_s
 {
 	unsigned long int size;
