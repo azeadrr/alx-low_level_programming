@@ -1,0 +1,5 @@
+all: make
+	CC = gcc
+	SRC = main.c school.c
+make:
+		$(CC) $(SRC) -o school
