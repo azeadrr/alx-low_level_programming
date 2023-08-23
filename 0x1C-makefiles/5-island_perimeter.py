@@ -14,4 +14,4 @@ def island_perimeter(grid):
                     num = num + 1
                 if (row == 0 or grid[row - 1][column] == 0):
                     num = num + 1
-        return (num)
+     return (num)
