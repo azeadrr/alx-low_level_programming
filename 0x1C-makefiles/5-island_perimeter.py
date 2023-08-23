@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """function def island_perimeter(grid): that returns the perimeter of the island described in grid"""
 
+
 def island_perimeter(grid):
     count = 0
     for a in range(len(grid)):
@@ -11,4 +12,5 @@ def island_perimeter(grid):
                 count  = count - 2
             if b > 0 and grid[a][b - 1] == 1:
                 count = count - 2
+
     return (count)
