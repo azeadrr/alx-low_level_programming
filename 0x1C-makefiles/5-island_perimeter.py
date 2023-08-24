@@ -1,23 +1,18 @@
 #!/usr/bin/python3
-"""
-function that returns the perimeter of the island described in grid
-"""
-
+"""function that returns the perimeter of the island described in grid:"""
 
 def island_perimeter(grid):
-    """
-    returns calculation perimeter of an island in grid
-    """
-    count = 0
+    num = 0
+    
+    for i in range(len(grid)):
+        for x in range(len(grid[i])):
+            if grid[i][x]:
+                num += 4
 
-    for a in range(len(grid)):
-        for b in range(len(grid[a])):
-            if grid[a][b]:
-                count += 4
+                if i > 0 and grid[i - 1][x] == 1:
+                    num -= 2
 
-            if a > 0 and grid[a - 1][b] == 1:
-                count  -= 2
-            if b > 0 and grid[a][b - 1] == 1:
-                count -= 2
+                if x > 0 and grid[i][x - 1] == 1:
+                    num -= 2
 
-    return (count)
+    return (num)
