@@ -3,7 +3,6 @@
 /**
  * _binary_search - searches for a value in a sorted array of integers
  * @array: is a pointer to the first element of the array to search in
- * @size: number of elements in array
  * @value: is the value to search for
  * @rgh: The ending index of array to search
  * @lef: The starting index of array to search
