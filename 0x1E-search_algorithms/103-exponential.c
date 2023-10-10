@@ -3,31 +3,32 @@
 /**
  * _binary_search - searches for a value in a sorted array of integers
  * @array: is a pointer to the first element of the array to search in
- * @size: is the number of elements in array
+ * @size: number of elements in array
  * @value: is the value to search for
+ * @rgh: The ending index of array to search
+ * @lef: The starting index of array to search
  * Return: If value is not present in array or if array is NULL
  * your function must return -1
  */
-int _binary_search(int *array, size_t left, size_t right, int value)
+int _binary_search(int *array, size_t lef, size_t rgh, int value)
 {
 	size_t x;
 
 	if (array == NULL)
 		return (-1);
-	while (right >= left)
+	while (rgh >= lef)
 	{
 		printf("Searching in array: ");
-		for (x = left; x < right; x++)
+		for (x = lef; x < rgh; x++)
 			printf("%d, ", array[x]);
 		printf("%d\n", array[x]);
-
-		x = left + (right - left) / 2;
+		x = lef + (rgh - lef) / 2;
 		if (array[x] == value)
 			return (x);
 		if (array[x] > value)
-			right = x - 1;
+			rgh = x - 1;
 		else
-			left = x + 1;
+			lef = x + 1;
 	}
 	return (-1);
 }
@@ -46,7 +47,6 @@ int exponential_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-
 	if (array[0] != value)
 	{
 		for (x = 1; x < size && array[x] <= value; x = x * 2)
